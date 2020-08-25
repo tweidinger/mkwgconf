@@ -33,6 +33,9 @@ with open(args.client_template, 'r') as f:
     CLIENT_TEMPLATE = f.read()
 
 # Fill in any missing configuration values.
+if 'public_address' not in iconf['server']:
+    iconf['server']['public_address'] = subprocess.check_output(
+        "curl ifconfig.io", shell=True).decode("utf-8").strip()
 
 if 'private_key' not in iconf['server']:
     iconf['server']['private_key'] = subprocess.check_output(
