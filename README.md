@@ -8,7 +8,7 @@ you want.
 How to use
 ===
 
-1. Have Wireguard installed on your server and clients.
+1. Have Wireguard and curl installed on your server and Wireguard on the clients.
 
 1. Make a copy of `example/example.json` and rename it to the name of your
 Wireguard VPN server. In this example, we'll use `squirtle.conf`.
