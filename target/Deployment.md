@@ -1,0 +1,3 @@
+#Usage
+
+Notice that you now have a bunch of generated configuration files in this directory. wg0.conf should be moved to your Wireguard server at /etc/wireguard/wg0.conf. The other conf files are named according to the names you used for your clients. The -geo conf is for VPN usage where you want your client to appear to originate from a certain IP address, and -access is for merely getting access to the intranet ranges you specified in intranet_ip_ranges, without changing your client's own IP address. Move those conf files to /etc/wireguard on your client, or whatever you usually do to install those configurations on your clients (e.g., qrencode -t ansiutf8 < wg0-pikachu-geo.conf and then scanning the result on your phone).
