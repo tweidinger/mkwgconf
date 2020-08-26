@@ -66,14 +66,14 @@ server_conf = open('target/%s.conf' % iconf['wg_interface'], 'w')
 server_conf.write(pystache.render(SERVER_TEMPLATE, iconf))
 
 for client in iconf['clients']:
-    client_conf = open('target/%s-%s-geo.conf' % (iconf['wg_interface'],
+    client_conf = open('target/%s_%s_geo.conf' % (iconf['wg_interface'],
                                            client['name']), 'w')
     client_conf.write(pystache.render(CLIENT_TEMPLATE,
                                       {'client': client,
                                        'server': iconf['server'],
                                        'allowed_ips': '0.0.0.0/0, ::/0'}))
     if 'intranet_ip_ranges' in iconf['server']:
-        client_conf = open('target/%s-%s-access.conf' % (iconf['wg_interface'],
+        client_conf = open('target/%s_%s_access.conf' % (iconf['wg_interface'],
                                                   client['name']), 'w')
         client_conf.write(pystache.render(
             CLIENT_TEMPLATE,
